@@ -25,6 +25,21 @@ namespace AdventureWorks.EF.GR.Tests
 
             Assert.IsTrue(cantidadReal == cantidadEsperada);
         }
+        [TestMethod]
+        public void QueryWCF()
+        {
+
+            int ID = 29847;
+            var cantidadEsperada = 1;
+            var cantidadReal = 0;
+
+            // invoque al método que consulta en la tabla de stores
+            AdventureWorks.WCF.Service1 servicio = new WCF.Service1();
+            var list = servicio.ConsultarPorID(ID).ToList(); 
+            cantidadReal = list.Count();
+
+            Assert.IsTrue(cantidadReal == cantidadEsperada);
+        }
 
         [TestMethod]
         public void QueryOrderDate()
