@@ -17,5 +17,17 @@ namespace AdventureWorks.EF.GR.Repositorios
             return query;
         }
 
+        public IQueryable<SalesOrderHeader> ConsultaPorOrderDate(DateTime Fecha1,DateTime Fecha2)
+        {
+            var query = FindBy(x => (DateTime)x.OrderDate >= Fecha1 && x.OrderDate <= Fecha2);
+            return query;
+        }
+        public IQueryable<SalesOrderHeader> ConsultaPorTotal(double Total)
+        {
+            var query = FindBy(x => (Double)x.TotalDue > Total);
+            return query;
+        }
+
+
     }
 }
