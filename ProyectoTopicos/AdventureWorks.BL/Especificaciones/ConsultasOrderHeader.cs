@@ -13,7 +13,7 @@ namespace AdventureWorks.BL.Especificaciones
         {
             RepOrderHeader Consulta = new RepOrderHeader();
             bool bandera = false;
-            var listaOrderHeader = Consulta.ConsultaPorClienteID(ID).ToList();
+            var listaOrderHeader = Consulta.ConsultaPorClienteID(ID);
             int i = listaOrderHeader.Count();
             if (i!=0)
             {
