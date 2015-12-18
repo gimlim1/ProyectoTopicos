@@ -2,8 +2,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AdventureWorks.EF.GR.Repositorios;
 using AdventureWorks.Modelo;
+using AdventureWorks.WCF;
+
 
 using System.Linq;
+using System.Collections.Generic;
 
 namespace AdventureWorks.EF.GR.Tests
 {
@@ -34,8 +37,9 @@ namespace AdventureWorks.EF.GR.Tests
             var cantidadReal = 0;
 
             // invoque al método que consulta en la tabla de stores
+           
             AdventureWorks.WCF.Service1 servicio = new WCF.Service1();
-            var list = servicio.ConsultarPorID(ID).ToList(); 
+            List<SalesOrderHeader> list = servicio.ConsultarPorID(ID).ToList();
             cantidadReal = list.Count();
 
             Assert.IsTrue(cantidadReal == cantidadEsperada);

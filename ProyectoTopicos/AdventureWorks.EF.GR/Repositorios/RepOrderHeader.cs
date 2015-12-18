@@ -28,6 +28,12 @@ namespace AdventureWorks.EF.GR.Repositorios
             return query;
         }
 
+        public IQueryable<SalesOrderHeader> ConsultaTodos()
+        {
+            var query = GetAll();
+            return query;
+        }
+
 
     }
 }

@@ -45,6 +45,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -71,10 +74,18 @@
       <Project>{edaebd00-0fd7-4892-a964-0c4f9d42e432}</Project>
       <Name>AdventureWorks.Modelo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AdventureWorks.WCF\AdventureWorks.WCF.csproj">
+      <Project>{9d6ab910-78ea-40d5-ab8a-053de10913c0}</Project>
+      <Name>AdventureWorks.WCF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AdventureWorks.Modelo.SalesOrderHeader.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

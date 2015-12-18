@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.EF.GR", "AdventureWorks.EF.GR\AdventureWorks.EF.GR.csproj", "{F4DC49FC-3EDB-4AC3-89A1-7D4FBAF66CD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.EF.GR.Tests", "AdventureWorks.EF.GR.Tests\AdventureWorks.EF.GR.Tests.csproj", "{1B69CE83-C7B6-43B7-9F0E-B5FCCC064A4D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9D6AB910-78EA-40D5-AB8A-053DE10913C0} = {9D6AB910-78EA-40D5-AB8A-053DE10913C0}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.BL", "AdventureWorks.BL\AdventureWorks.BL.csproj", "{9FE44A35-5552-4644-A325-907947EC40AD}"
 EndProject

@@ -19,6 +19,11 @@ namespace AdventureWorks.WCF
             ConsultasOrderHeader Consultar = new ConsultasOrderHeader();  
             return Consultar.ConsultarPorID(ID);
         }
+        public List<SalesOrderHeader> Todos()
+        {
+            ConsultarTodosItems Todos = new ConsultarTodosItems();
+            return Todos.ConsultarTodos();
+        }
 
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

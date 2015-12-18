@@ -15,9 +15,12 @@ namespace AdventureWorks.WCF
     {
 
         [OperationContract]
-        List<SalesOrderHeader> ConsultarPorID(int ID);   
-   
-        
+        List<SalesOrderHeader> ConsultarPorID(int ID);
+
+        [OperationContract]
+        List<SalesOrderHeader> Todos();
+
+
     }
 
 
