@@ -4,30 +4,41 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
 
     $(function () {
         $("#IngreseNumeros").hide();
+        $("#Fecha1").hide();
+        $("#Fecha2").hide();
         $("#vertodos").click(
            function() {
                $("#IngreseNumeros").hide();
+               $("#Fecha1").hide();
+               $("#Fecha2").hide();
            });
         $("#total").click(
           function () {
               $("#IngreseNumeros").show();
+              $("#Fecha1").hide();
+              $("#Fecha2").hide();
           });
         $("#customer").click(
           function () {
               $("#IngreseNumeros").show();
+              $("#Fecha1").hide();
+              $("#Fecha2").hide();
           });
         $("#fecha").click(
           function () {
               $("#IngreseNumeros").hide();
+              $("#Fecha1").show();
+              $("#Fecha2").show();
           });
        });
 </script>
-
 
 
    <h2>Consultas</h2>
@@ -46,6 +57,8 @@
                 </div>
                 <div>
                     <span>Consultar Por Fecha</span> <input type="radio" name="condicion" value="Fecha" id="fecha" />
+                    <input type="text" id="Fecha1" value="Fecha 1" name="fecha1" />
+                    <input type="text" id="Fecha2" value="Fecha 2" name="fecha2" />
                 </div>
                 <input type="text" id="IngreseNumeros" name="Consulta" /><span> </span><input id="btConsultar" name="btConsultar" type="submit" value="Consultar" />
 

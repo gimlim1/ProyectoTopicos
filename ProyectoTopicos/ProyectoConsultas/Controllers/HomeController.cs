@@ -15,7 +15,7 @@ namespace ProyectoConsultas.Controllers
 
             return View(cliente.Todos()); 
         }
-        //cambio
+        
         [HttpPost]
         public ActionResult Index(FormCollection fc)
         {
@@ -33,8 +33,16 @@ namespace ProyectoConsultas.Controllers
             if (Condicion.Equals("Ver Todos")){
                 return View(cliente.Todos());
             }
+            if (Condicion.Equals("Fecha"))
+            {
+                String fecha1 = fc["fecha1"];
+                String fecha2 = fc["fecha2"];
+                DateTime Fecha1 = DateTime.Parse(fecha1);
+                DateTime Fecha2 = DateTime.Parse(fecha2);
+                return View(cliente.ConsultaPorOrderDate(Fecha1,Fecha2));
+            }
 
-                return View(cliente.Todos());
+            return View(cliente.Todos());
 
         }
     }

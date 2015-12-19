@@ -4,9 +4,49 @@
     ViewBag.Title = "Index1";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        $("#IngreseNumeros").hide();
+        $("#vertodos").click(
+           function() {
+               $("#IngreseNumeros").hide();
+           });
+        $("#total").click(
+          function () {
+              $("#IngreseNumeros").show();
+          });
+        $("#product").click(
+          function () {
+              $("#IngreseNumeros").show();
+          });
+        $("#cantidad").click(
+          function () {
+              $("#IngreseNumeros").show();
+          });
+       });
+</script>
 
 <h2>Order Details</h2>
 
+@using (Html.BeginForm("Index1", "OrderDetail"))
+{
+    <div>
+        <span>Consultar Todos</span> <input type="radio" name="condicion" value="Ver Todos" id="vertodos" />
+    </div>
+            <div>
+                <span>Consultar Por Total</span> <input type="radio" name="condicion" value="Total" id="total" />
+            </div>
+            <div>
+                <span>Consultar Por Product ID</span> <input type="radio" name="condicion" value="Product" id="product" />
+            </div>
+                <div>
+                    <span>Consultar Por Cantidad</span> <input type="radio" name="condicion" value="Cantidad" id="cantidad" />
+                </div>
+                <input type="text" id="IngreseNumeros" name="Consulta" /><span> </span><input id="btConsultar" name="btConsultar" type="submit" value="Consultar" />
+
+}
 
 <table class="table" align="center">
     <tr>
