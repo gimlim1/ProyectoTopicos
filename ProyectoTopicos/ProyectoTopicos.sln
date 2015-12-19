@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoConsultas", "Proyec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.WCF", "AdventureWorks.WCF\AdventureWorks.WCF.csproj", "{9D6AB910-78EA-40D5-AB8A-053DE10913C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.OrderDetail.WCF", "AdventureWorks.OrderDetail.WCF\AdventureWorks.OrderDetail.WCF.csproj", "{54868FBE-B7D8-4C28-9F0D-E36531541B8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9D6AB910-78EA-40D5-AB8A-053DE10913C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D6AB910-78EA-40D5-AB8A-053DE10913C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D6AB910-78EA-40D5-AB8A-053DE10913C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54868FBE-B7D8-4C28-9F0D-E36531541B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54868FBE-B7D8-4C28-9F0D-E36531541B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54868FBE-B7D8-4C28-9F0D-E36531541B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54868FBE-B7D8-4C28-9F0D-E36531541B8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

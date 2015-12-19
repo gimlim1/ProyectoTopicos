@@ -2,11 +2,6 @@
 using AdventureWorks.Modelo;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace AdventureWorks.WCF
 {
@@ -23,6 +18,17 @@ namespace AdventureWorks.WCF
         {
             ConsultarTodosItems Todos = new ConsultarTodosItems();
             return Todos.ConsultarTodos();
+        }
+        public List<SalesOrderHeader> ConsultaPorOrderDate(DateTime Fecha1, DateTime Fecha2)
+        {
+            ConsultasOrderHeader Consultar = new ConsultasOrderHeader();
+            return Consultar.ConsultarPorFechas(Fecha1, Fecha2);
+        }
+
+        public List<SalesOrderHeader> ConsultaPorTotal(double Total) {
+            ConsultasOrderHeader Consultar = new ConsultasOrderHeader();
+            return Consultar.ConsultarPorTotal(Total);
+
         }
 
 

@@ -1,30 +1,27 @@
-﻿using AdventureWorks.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using AdventureWorks.Modelo;
 
-
-namespace AdventureWorks.WCF
+namespace AdventureWorks.OrderDetail.WCF
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IAdventureWorksOrderDetail
     {
+        [OperationContract]
+        List<SalesOrderDetail> ConsultarPorProductoID(int ID);
 
         [OperationContract]
-        List<SalesOrderHeader> ConsultarPorID(int ID);
+        List<SalesOrderDetail> Todos();
 
         [OperationContract]
-        List<SalesOrderHeader> Todos();
+        List<SalesOrderDetail> ConsultaPorCantidad(int Cantidad);
 
         [OperationContract]
-        List<SalesOrderHeader> ConsultaPorOrderDate(DateTime Fecha1, DateTime Fecha2);
-
-        [OperationContract]
-        List<SalesOrderHeader> ConsultaPorTotal(double Total);
-
-
+        List<SalesOrderDetail> ConsultaPorTotal(double Total);
     }
 
 

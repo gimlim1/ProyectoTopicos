@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AdventureWorks.Modelo.SalesOrderDetail>
+
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order Details</h2>
+
+
+<table class="table" align="center">
+    <tr>
+        <th align="center">
+            @Html.DisplayNameFor(model => model.OrderQty)
+        </th>
+        <th align="center">
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th align="center">
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th align="center">
+            @Html.DisplayNameFor(model => model.LineTotal)
+        </th>
+        <th align="center">
+            @Html.DisplayNameFor(model => model.SalesOrderHeader.SalesOrderNumber)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LineTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesOrderHeader.SalesOrderNumber)
+        </td>
+    </tr>
+}
+
+</table>

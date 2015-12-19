@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -130,6 +131,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\OrderDetail\Index1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -148,6 +150,10 @@
     <ProjectReference Include="..\AdventureWorks.Modelo\AdventureWorks.Modelo.csproj">
       <Project>{edaebd00-0fd7-4892-a964-0c4f9d42e432}</Project>
       <Name>AdventureWorks.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdventureWorks.OrderDetail.WCF\AdventureWorks.OrderDetail.WCF.csproj">
+      <Project>{54868fbe-b7d8-4c28-9f0d-e36531541b8b}</Project>
+      <Name>AdventureWorks.OrderDetail.WCF</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdventureWorks.WCF\AdventureWorks.WCF.csproj">
       <Project>{9d6ab910-78ea-40d5-ab8a-053de10913c0}</Project>
