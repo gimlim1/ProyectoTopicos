@@ -15,6 +15,7 @@ namespace ProyectoConsultas.Controllers
 
             return View(cliente.Todos()); 
         }
+        //cambio
         [HttpPost]
         public ActionResult ConsultarDatos(int Consulta)
         {
