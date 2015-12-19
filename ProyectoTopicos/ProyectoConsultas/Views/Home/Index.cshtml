@@ -9,43 +9,50 @@
 
     $(function () {
         $("#IngreseNumeros").hide();
-        $('#Select').change(function () {
-            //This saves some time by caching the jquery value
-            var val = $(this).val();
-            //this hides any boxes that the previous selection might have left open
-            $("#IngreseNumeros").hide();
-            $("#Aceptar").hide();
-            //This just opens the ones we want based off the selection
-            switch (val) {
-                case "ConsultarIDCustomer":
-                    $("#IngreseNumeros").show();
-                    break;
-                case "ConsultaTotal":
-                    $("#IngreseNumeros").show();
-                    break;
-                case 'other':
-                    $("#IngreseNumeros").hide();
-                    break;
-            }
-        });
-    });
+        $("#vertodos").click(
+           function() {
+               $("#IngreseNumeros").hide();
+           });
+        $("#total").click(
+          function () {
+              $("#IngreseNumeros").show();
+          });
+        $("#customer").click(
+          function () {
+              $("#IngreseNumeros").show();
+          });
+        $("#fecha").click(
+          function () {
+              $("#IngreseNumeros").hide();
+          });
+       });
 </script>
-<form id="myForm">
-    <input type="text" id="IngreseNumeros" name="Consulta" />
-    <button id="btConsultar" type="submit" value="Consultar">Consultar</button>
-</form>
-    <h2>Consultas</h2>
+
+
+
+   <h2>Consultas</h2>
 
     <div>
-        <select id="Select">
-            <option id="1" value="">Seleccione Opción</option>
-            <option id="2" value="ConsultarTodos">ConsultarTodos</option>
-            <option id="3" value="ConsultarIDCustomer">ConsultarPorIDCustomer</option>
-            <option id="4" value="ConsultaTotal">Consultar Por Total Mayor que</option>
-        </select>
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <div>
+                <span>Consultar Todos</span> <input type="radio" name="condicion" value="Ver Todos" id="vertodos" />
+            </div>
+            <div>
+                <span>Consultar Por Total</span> <input type="radio" name="condicion" value="Total" id="total" />
+            </div>
+                <div>
+                    <span>Consultar Por Customer ID</span> <input type="radio" name="condicion" value="Customer" id="customer" />
+                </div>
+                <div>
+                    <span>Consultar Por Fecha</span> <input type="radio" name="condicion" value="Fecha" id="fecha" />
+                </div>
+                <input type="text" id="IngreseNumeros" name="Consulta" /><span> </span><input id="btConsultar" name="btConsultar" type="submit" value="Consultar" />
+
+                }
 
 
-    </div>
+            </div>
     <table class="table" align="center">
         <tr>
             <th align="center">

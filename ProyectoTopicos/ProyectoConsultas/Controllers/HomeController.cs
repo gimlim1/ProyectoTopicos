@@ -17,15 +17,25 @@ namespace ProyectoConsultas.Controllers
         }
         //cambio
         [HttpPost]
-        public ActionResult ConsultarDatos(int Consulta)
+        public ActionResult Index(FormCollection fc)
         {
-            int i = 0;
-            i++;
-            int valor = Consulta;
-     
+            String txtfield = fc["Consulta"];
+            String Condicion = fc["Condicion"];
             
+            if(Condicion.Equals("Customer")){
+                int valor = Int32.Parse(txtfield.ToString());
+                return View(cliente.ConsultarPorID(valor));
+            }
+            if (Condicion.Equals("Total")){
+                double valor = Double.Parse(txtfield.ToString());
+                return View(cliente.ConsultaPorTotal(valor));
+            }
+            if (Condicion.Equals("Ver Todos")){
+                return View(cliente.Todos());
+            }
 
-            return View();
+                return View(cliente.Todos());
+
         }
     }
 
