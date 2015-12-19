@@ -9,7 +9,6 @@
 
     $(function () {
         $("#IngreseNumeros").hide();
-        $("#Aceptar").hide();
         $('#Select').change(function () {
             //This saves some time by caching the jquery value
             var val = $(this).val();
@@ -20,81 +19,83 @@
             switch (val) {
                 case "ConsultarIDCustomer":
                     $("#IngreseNumeros").show();
-                    $("#Aceptar").show();
                     break;
                 case "ConsultaTotal":
                     $("#IngreseNumeros").show();
-                    $("#Aceptar").show();
                     break;
                 case 'other':
                     $("#IngreseNumeros").hide();
-                    $("#Aceptar").hide();
                     break;
             }
         });
     });
 </script>
+<form id="myForm">
+    <input type="text" id="IngreseNumeros" name="Consulta" />
+    <button id="btConsultar" type="submit" value="Consultar">Consultar</button>
+</form>
+    <h2>Consultas</h2>
 
-<h2>Consultas</h2>
-<div>
-    <select id="Select">
-        <option id="1" value="">Seleccione Opción</option>
-        <option id="2" value="ConsultarTodos">ConsultarTodos</option>
-        <option id="3" value="ConsultarIDCustomer">ConsultarPorIDCustomer</option>
-        <option id="4" value="ConsultaTotal">Consultar Por Total Mayor que</option>
-    </select>
-        <input type="text" id="IngreseNumeros" />
-        <button type="button" value="Aceptar">Consultar</button>
-</div>
-<table class="table" align="center">
-    <tr>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.RevisionNumber)
-        </th>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.OrderDate)
-        </th>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.SalesOrderNumber)
-        </th>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.CustomerID)
-        </th>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.ShipMethod)
-        </th>
-        <th align="center">
-            @Html.DisplayNameFor(model => model.TotalDue)
-        </th>
-    </tr>
+    <div>
+        <select id="Select">
+            <option id="1" value="">Seleccione Opción</option>
+            <option id="2" value="ConsultarTodos">ConsultarTodos</option>
+            <option id="3" value="ConsultarIDCustomer">ConsultarPorIDCustomer</option>
+            <option id="4" value="ConsultaTotal">Consultar Por Total Mayor que</option>
+        </select>
 
-@foreach (var item in Model) {
-    <tr >
-        <td align="center">
-            @Html.DisplayFor(modelItem => item.RevisionNumber)
-        </td>
-        <td align="left">
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td>
-        <td align="center">
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td align="center">
-            @Html.DisplayFor(modelItem => item.SalesOrderNumber)
-        </td>
-        <td align="center">
-            @Html.DisplayFor(modelItem => item.CustomerID)
-        </td>
-        <td align="left">
-            @Html.DisplayFor(modelItem => item.ShipMethod)
-        </td>
-        <td align="center">
-            @Html.DisplayFor(modelItem => item.TotalDue)
-        </td>
-    </tr>
-}
 
-</table>
+    </div>
+    <table class="table" align="center">
+        <tr>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.RevisionNumber)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.SalesOrderNumber)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.ShipMethod)
+            </th>
+            <th align="center">
+                @Html.DisplayNameFor(model => model.TotalDue)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.RevisionNumber)
+                </td>
+                <td align="left">
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.SalesOrderNumber)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>
+                <td align="left">
+                    @Html.DisplayFor(modelItem => item.ShipMethod)
+                </td>
+                <td align="center">
+                    @Html.DisplayFor(modelItem => item.TotalDue)
+                </td>
+            </tr>
+        }
+
+    </table>

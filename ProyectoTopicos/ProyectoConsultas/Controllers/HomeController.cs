@@ -15,5 +15,17 @@ namespace ProyectoConsultas.Controllers
 
             return View(cliente.Todos()); 
         }
+        [HttpPost]
+        public ActionResult ConsultarDatos(int Consulta)
+        {
+            int i = 0;
+            i++;
+            int valor = Consulta;
+     
+            
+
+            return View();
+        }
     }
+
 }
